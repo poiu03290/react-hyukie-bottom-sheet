@@ -27,7 +27,7 @@ export default function Section({ children, isShow, height }: Props) {
       className={styles.section}
       style={{ height: newHeight, bottom: `-${newHeight}px` }}
     >
-      <div style={{ color: "pink" }}>{children}</div>
+      <div style={{ color: "pink", fontWeight: "bold" }}>{children}</div>
     </div>
   );
 }
