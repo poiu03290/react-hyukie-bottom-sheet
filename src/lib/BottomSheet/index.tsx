@@ -13,14 +13,15 @@ export default function BottomSheet({
   isShow,
   handleBottomSheet,
   contents,
+  height,
 }: Props) {
   return (
     <Layout>
       <Container isShow={isShow} handleBottomSheet={handleBottomSheet} />
       <Section
+        height={height}
         isShow={isShow}
         handleBottomSheetShow={handleBottomSheet}
-        height={350}
       >
         {contents}
       </Section>

@@ -15,7 +15,7 @@ function App() {
         <h1>Bottom-Sheet Show</h1>
       </button>
       <BottomSheet
-        height={350}
+        height={250}
         handleBottomSheet={handleBottomSheet}
         isShow={isShow}
         contents={<p>Hello world</p>}
