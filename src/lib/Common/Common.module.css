@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  width: "100%";
+  height: "100%";
+  justify-content: center;
+}
+
+.container {
+  position: fixed;
+  width: "100%";
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.section {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 50;
+  transition-delay: 30ms;
+  transition-duration: 700ms;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  bottom: -250px;
+  height: 250px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
