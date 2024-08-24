@@ -15,8 +15,11 @@ function App() {
         <h1>Bottom-Sheet Show</h1>
       </button>
       <BottomSheet
-        height={250}
+        height={350}
+        backGroundColor={"rgba(0, 0, 0, 0.2)"}
+        shadow={"0px 0px 5px 0px rgba(0, 0, 0, 0.45)"}
         handleBottomSheet={handleBottomSheet}
+        duration={800}
         isShow={isShow}
         contents={<p>Hello world</p>}
       />

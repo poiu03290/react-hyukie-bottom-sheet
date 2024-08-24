@@ -7,6 +7,9 @@ type Props = {
   handleBottomSheet: (state: boolean) => void;
   contents?: React.ReactNode;
   height?: number;
+  backGroundColor?: string;
+  shadow?: string;
+  duration?: number;
 };
 
 export default function BottomSheet({
@@ -14,14 +17,23 @@ export default function BottomSheet({
   handleBottomSheet,
   contents,
   height,
+  backGroundColor,
+  shadow,
+  duration,
 }: Props) {
   return (
     <Layout>
-      <Container isShow={isShow} handleBottomSheet={handleBottomSheet} />
+      <Container
+        isShow={isShow}
+        handleBottomSheet={handleBottomSheet}
+        backGroundColor={backGroundColor}
+      />
       <Section
         height={height}
         isShow={isShow}
         handleBottomSheetShow={handleBottomSheet}
+        shadow={shadow}
+        duration={duration}
       >
         {contents}
       </Section>

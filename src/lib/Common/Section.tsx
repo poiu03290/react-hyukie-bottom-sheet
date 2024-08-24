@@ -6,9 +6,17 @@ type Props = {
   isShow: boolean | undefined;
   handleBottomSheetShow?: (state: boolean) => void;
   height?: number;
+  shadow?: string;
+  duration?: number;
 };
 
-export default function Section({ children, isShow, height }: Props) {
+export default function Section({
+  children,
+  isShow,
+  height,
+  shadow,
+  duration,
+}: Props) {
   const newHeight = height || 250;
   const BottonSheetRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +33,12 @@ export default function Section({ children, isShow, height }: Props) {
     <div
       ref={BottonSheetRef}
       className={styles.section}
-      style={{ height: newHeight, bottom: `-${newHeight}px` }}
+      style={{
+        height: newHeight,
+        bottom: `-${newHeight}px`,
+        boxShadow: shadow,
+        transitionDuration: `${duration}ms`,
+      }}
     >
       <div style={{ color: "pink", fontWeight: "bold" }}>{children}</div>
     </div>
