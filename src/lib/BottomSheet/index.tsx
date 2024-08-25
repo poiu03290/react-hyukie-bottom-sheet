@@ -4,7 +4,7 @@ import Section from "../Common/Section";
 
 type Props = {
   isShow?: boolean;
-  handleBottomSheet: (state: boolean) => void;
+  handleBottomSheet?: (state: boolean) => void;
   contents?: React.ReactNode;
   height?: number;
   backGroundColor?: string;
