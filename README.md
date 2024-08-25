@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# react-hyukie-bottom-sheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Bottom Sheet that can be used in React
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### npm
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npm install react-hyukie-bottom-sheet --save
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### yarn
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+yarn add react-hyukie-bottom-sheet
+```
+
+## Example
+
+```
+import { useState } from "react";
+import { BottomSheet } from "react-hyukie-bottom-sheet";
+
+function App() {
+  const [isShow, setIsShow] = useState(false);
+
+  const handleBottomSheet = () => {
+    setIsShow((prev) => !prev);
+  };
+
+  return (
+    <>
+      <button onClick={handleBottomSheet}>
+        <h1>Bottom-Sheet Show</h1>
+      </button>
+      <BottomSheet
+        handleBottomSheet={handleBottomSheet}
+        isShow={isShow}
+        contents={<p>Hello world</p>}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+## props
+
+| Prop name         | essential |      type       | Description                                                                                        | Example                                |
+| ----------------- | :-------: | :-------------: | -------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| isShow            |     X     |     boolean     | A value that determines whether the bottom sheet comes out or not.                                 | `true`                                 |
+| handleBottomSheet |     O     |    function     | A function that manages isShow, a value that determines whether the bottom sheet comes out or not. | `setIsShow((prev) => !prev)`           |
+| contents          |     X     | React.ReactNode | Content to be placed inside the bottom sheet                                                       | `<p>Hello World</p>`                   |
+| height            |     X     |     number      | Height that the bottom sheet will occupy on the screen (vertical size)                             | `350`                                  |
+| backGroundColor   |     X     |     string      | Existing screen color when Bottom Sheet is raised                                                  | `gray` `rgba(0, 0, 0, 0.2)` `#fff` ... |
+| shadow            |     X     |     string      | Bottom Sheet's Top Shadow Style                                                                    | `0px 0px 5px 0px rgba(0, 0, 0, 0.45)`  |
+| duration          |     X     |     number      | The speed at which the bottom sheet rises                                                          | `500`                                  |
