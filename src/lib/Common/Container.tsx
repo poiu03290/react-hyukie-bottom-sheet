@@ -2,7 +2,7 @@ import styles from "./Common.module.css";
 
 type Props = {
   isShow: boolean | undefined;
-  handleBottomSheet: (state: boolean) => void;
+  handleBottomSheet?: (state: boolean) => void;
   backGroundColor?: string;
 };
 

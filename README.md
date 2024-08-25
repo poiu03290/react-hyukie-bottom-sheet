@@ -18,7 +18,7 @@ yarn add react-hyukie-bottom-sheet
 
 ## Example
 
-```
+```typescript
 import { useState } from "react";
 import { BottomSheet } from "react-hyukie-bottom-sheet";
 
@@ -51,7 +51,7 @@ export default App;
 | Prop name         | essential |      type       | Description                                                                                        | Example                                |
 | ----------------- | :-------: | :-------------: | -------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | isShow            |     X     |     boolean     | A value that determines whether the bottom sheet comes out or not.                                 | `true`                                 |
-| handleBottomSheet |     O     |    function     | A function that manages isShow, a value that determines whether the bottom sheet comes out or not. | `setIsShow((prev) => !prev)`           |
+| handleBottomSheet |     X     |    function     | A function that manages isShow, a value that determines whether the bottom sheet comes out or not. | `setIsShow((prev) => !prev)`           |
 | contents          |     X     | React.ReactNode | Content to be placed inside the bottom sheet                                                       | `<p>Hello World</p>`                   |
 | height            |     X     |     number      | Height that the bottom sheet will occupy on the screen (vertical size)                             | `350`                                  |
 | backGroundColor   |     X     |     string      | Existing screen color when Bottom Sheet is raised                                                  | `gray` `rgba(0, 0, 0, 0.2)` `#fff` ... |
