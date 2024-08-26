@@ -57,3 +57,4 @@ export default App;
 | backGroundColor   |     X     |     string      | Existing screen color when Bottom Sheet is raised                                                  | `gray` `rgba(0, 0, 0, 0.2)` `#fff` ... |
 | shadow            |     X     |     string      | Bottom Sheet's Top Shadow Style                                                                    | `0px 0px 5px 0px rgba(0, 0, 0, 0.45)`  |
 | duration          |     X     |     number      | The speed at which the bottom sheet rises                                                          | `500`                                  |
+| borderRadius      |     X     |     number      | Left and right bends at the top of the bottom sheet rises                                          | `16`                                   |
