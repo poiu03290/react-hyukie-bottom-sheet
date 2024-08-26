@@ -10,6 +10,7 @@ type Props = {
   backGroundColor?: string;
   shadow?: string;
   duration?: number;
+  borderRadius?: number;
 };
 
 export default function BottomSheet({
@@ -20,6 +21,7 @@ export default function BottomSheet({
   backGroundColor,
   shadow,
   duration,
+  borderRadius,
 }: Props) {
   return (
     <Layout>
@@ -34,6 +36,7 @@ export default function BottomSheet({
         handleBottomSheetShow={handleBottomSheet}
         shadow={shadow}
         duration={duration}
+        borderRadius={borderRadius}
       >
         {contents}
       </Section>

@@ -8,6 +8,7 @@ type Props = {
   height?: number;
   shadow?: string;
   duration?: number;
+  borderRadius?: number;
 };
 
 export default function Section({
@@ -16,6 +17,7 @@ export default function Section({
   height,
   shadow,
   duration,
+  borderRadius,
 }: Props) {
   const newHeight = height || 250;
   const BottonSheetRef = useRef<HTMLDivElement>(null);
@@ -38,6 +40,9 @@ export default function Section({
         bottom: `-${newHeight}px`,
         boxShadow: shadow,
         transitionDuration: `${duration}ms`,
+        borderTopLeftRadius: `${borderRadius}px`,
+        borderTopRightRadius: `${borderRadius}px`,
+        // borderRadius: `${borderRadius}px`,
       }}
     >
       <div style={{ color: "pink", fontWeight: "bold" }}>{children}</div>
